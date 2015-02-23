@@ -19,21 +19,53 @@
         {{customerCtrl.customer.phone}}
       </p>
 
-      <table class="table">
-        <caption>Listado de proyectos</caption>
-        <thead>
-          <tr>
-            <td>Nombre</td>
-            <td>Descripción</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="project in customerCtrl.customer.projects |orderBy:'name'">
-            <td>{{project.name | uppercase}}</td>
-            <td>{{project.description}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <section ng-controller="PanelController as panelCtrl">
+        <ul class="nav nav-pills">
+          <li ng-class="{ active:panelCtrl.isSelected(1) }">
+            <a href ng-click="panelCtrl.selectTab(1)">Información</a>
+          </li>
+          <li ng-class="{ active:panelCtrl.isSelected(2) }">
+            <a href ng-click="panelCtrl.selectTab(2)">Proyectos</a>
+          </li>
+        </ul>
+        <div class="panel" ng-show="panelCtrl.isSelected(1)">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Dirección:</strong>
+              {{customerCtrl.customer.address}}
+            </li>
+            <li class="list-group-item">
+              <strong>Localidad:</strong>
+              {{customerCtrl.customer.town}}
+            </li>
+            <li class="list-group-item">
+              <strong>Provincia:</strong>
+              {{customerCtrl.customer.city}}
+            </li>
+            <li class="list-group-item">
+              <strong>País:</strong>
+              {{customerCtrl.customer.country}}
+            </li>
+          </ul>
+        </div>
+        <div class="panel" ng-show="panelCtrl.isSelected(2)">
+          <table class="table">
+            <caption>Listado de proyectos</caption>
+            <thead>
+              <tr>
+                <td>Nombre</td>
+                <td>Descripción</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="project in customerCtrl.customer.projects |orderBy:'name'">
+                <td>{{project.name | uppercase}}</td>
+                <td>{{project.description}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   </div>
   <%= javascript_include_tag 'application' %>

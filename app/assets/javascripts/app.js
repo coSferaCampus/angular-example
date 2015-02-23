@@ -5,6 +5,18 @@
     this.customer = customer;
   });
 
+  app.controller('PanelController', function(){
+    this.tab = 1;
+
+    this.selectTab = function(setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSelected = function(checkTab) {
+      return this.tab === checkTab;
+    };
+  });
+
   var customer = {
     name: "Melyna Rau",
     address: "7220 Jakubowski Freeway",
