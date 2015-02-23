@@ -15,6 +15,7 @@
     phone: "1-206-502-0584",
     cif: "00000001R",
     email: "user1@email.com",
+    image: "http://lorempixel.com/400/200/people",
     projects: [
       {
         name: 'Mallesti',

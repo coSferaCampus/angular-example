@@ -9,6 +9,7 @@
   <div class="container"
     <div ng-controller="CustomerController as customerCtrl">
       <h1>{{customerCtrl.customer.name}}</h1>
+      <img ng-src="{{customerCtrl.customer.image}}">
       <p>
         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
         {{customerCtrl.customer.email}}
@@ -27,8 +28,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="project in customerCtrl.customer.projects">
-            <td>{{project.name}}</td>
+          <tr ng-repeat="project in customerCtrl.customer.projects |orderBy:'name'">
+            <td>{{project.name | uppercase}}</td>
             <td>{{project.description}}</td>
           </tr>
         </tbody>
