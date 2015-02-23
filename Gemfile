@@ -14,4 +14,5 @@ group :development, :test do
 
   # LiveReload guard allows to automatically reload your browser when 'view' files are modified.
   gem 'guard-livereload', '~> 2.4', require: false
+  gem 'rack-livereload'
 end
