@@ -17,6 +17,22 @@
         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
         {{customerCtrl.customer.phone}}
       </p>
+
+      <table class="table">
+        <caption>Listado de proyectos</caption>
+        <thead>
+          <tr>
+            <td>Nombre</td>
+            <td>Descripción</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="project in customerCtrl.customer.projects">
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <%= javascript_include_tag 'application' %>

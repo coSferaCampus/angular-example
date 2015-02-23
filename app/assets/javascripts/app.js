@@ -14,7 +14,17 @@
     zip_code: "43650-0519",
     phone: "1-206-502-0584",
     cif: "00000001R",
-    email: "user1@email.com"
+    email: "user1@email.com",
+    projects: [
+      {
+        name: 'Mallesti',
+        description: 'Aumentar la productividad'
+      },
+      {
+        name: 'Procastinator',
+        description: 'Perder el tiempo'
+      }
+    ]
   }
 
 })();
