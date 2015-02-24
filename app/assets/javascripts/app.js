@@ -17,6 +17,15 @@
     };
   });
 
+  app.controller('ProjectFormController', function(){
+    this.newProject = {};
+
+    this.addProject = function(customer) {
+      customer.projects.push(this.newProject);
+      this.newProject = {};
+    };
+  });
+
   var customer = {
     name: "Melyna Rau",
     address: "7220 Jakubowski Freeway",
