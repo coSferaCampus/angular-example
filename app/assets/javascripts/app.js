@@ -19,10 +19,17 @@
 
   app.controller('ProjectFormController', function(){
     this.newProject = {};
+    this.errors = false;
 
-    this.addProject = function(customer) {
-      customer.projects.push(this.newProject);
-      this.newProject = {};
+    this.addProject = function(customer, form) {
+      if (form.$valid) {
+        customer.projects.push(this.newProject);
+        this.newProject = {};
+        this.errors = false;
+      }
+      else {
+        this.errors = true;
+      }
     };
   });
 

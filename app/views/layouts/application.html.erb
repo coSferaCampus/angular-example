@@ -76,14 +76,16 @@
             </table>
             <!-- formulario para añadir nuevos proyectos -->
             <form name="projectForm" ng-controller="ProjectFormController as projectFormCtrl"
-                                     ng-submit="projectFormCtrl.addProject(customerCtrl.customer)">
-              <div class="form-group">
+                  ng-submit="projectFormCtrl.addProject(customerCtrl.customer, projectForm)" novalidate>
+              <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.errors && projectForm.name.$invalid }">
                 <label for="projectName">Nombre</label>
-                <input ng-model="projectFormCtrl.newProject.name" type="text" class="form-control">
+                <input ng-model="projectFormCtrl.newProject.name" type="text" class="form-control"
+                       name="name" required>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.errors && projectForm.description.$invalid }">
                 <label for="projectName">Descripción</label>
-                <input ng-model="projectFormCtrl.newProject.description" type="text" class="form-control">
+                <input ng-model="projectFormCtrl.newProject.description" type="text" class="form-control"
+                       name="description" required>
               </div>
               <div class="panel panel-default">
                 <div class="panel-body">
@@ -91,6 +93,9 @@
                 </div>
                 <div class="panel-body">
                   Descripción: {{projectFormCtrl.newProject.description}}
+                </div>
+                <div class="panel-body">
+                  projectForm is {{projectForm.$valid}}
                 </div>
               </div>
               <div class="form-group">
