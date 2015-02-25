@@ -43,6 +43,52 @@
     };
   });
 
+  app.directive('customerPanels', function(){
+    return {
+      restrict:     'E',
+      templateUrl:  'customer-panels.html',
+      controller:   'PanelController',
+      controllerAs: 'panelCtrl'
+    };
+  });
+
+  app.directive('customerTabs', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'customer-tabs.html'
+    };
+  });
+
+  app.directive('customerExtendedInformation', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'customer-extended-information.html'
+    };
+  });
+
+  app.directive('customerProjects', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'customer-projects.html'
+    };
+  });
+
+  app.directive('projectsTable', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'projects-table.html'
+    };
+  });
+
+  app.directive('newProject', function(){
+    return {
+      restrict:     'E',
+      templateUrl:  'new-project.html',
+      controller:   'ProjectFormController',
+      controllerAs: 'projectFormCtrl'
+    };
+  });
+
   var customer = {
     name: "Melyna Rau",
     address: "7220 Jakubowski Freeway",
