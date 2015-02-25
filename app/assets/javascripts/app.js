@@ -1,6 +1,8 @@
 (function(){
+  // App module
   var app = angular.module('mallesti', ['templates']);
 
+  // Controllers
   app.controller('CustomerController', function(){
     this.customer = customer;
   });
@@ -30,6 +32,14 @@
       else {
         this.errors = true;
       }
+    };
+  });
+
+  // Directives
+  app.directive('customerTitle', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'customer-title.html'
     };
   });
 
