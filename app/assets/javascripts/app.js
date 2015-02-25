@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('mallesti', []);
+  var app = angular.module('mallesti', ['templates']);
 
   app.controller('CustomerController', function(){
     this.customer = customer;

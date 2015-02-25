@@ -8,7 +8,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Assets gems
+
 gem 'bootstrap-sass'
+gem 'angular-rails-templates'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
 end
