@@ -1,10 +1,10 @@
-<form name="projectForm" ng-submit="projectFormCtrl.addProject(customerCtrl.customer, projectForm)" novalidate>
-  <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.errors && projectForm.name.$invalid }">
+<form name="projectForm" ng-submit="projectFormCtrl.addProject(customerCtrl.customer)" novalidate>
+  <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.hasError(projectForm.name) }">
     <label for="projectName">Nombre</label>
     <input ng-model="projectFormCtrl.newProject.name" type="text" class="form-control"
             name="name" required>
   </div>
-  <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.errors && projectForm.description.$invalid }">
+  <div class="form-group" ng-class="{ 'has-error' : projectFormCtrl.hasError(projectForm.description) }">
     <label for="projectName">Descripción</label>
     <input ng-model="projectFormCtrl.newProject.description" type="text" class="form-control"
             name="description" required>

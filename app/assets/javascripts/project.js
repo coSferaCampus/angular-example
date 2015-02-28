@@ -1,21 +1,30 @@
 (function(){
   var app = angular.module('mallesti-project', []);
 
-  app.controller('ProjectFormController', function(){
-    this.newProject = {};
-    this.errors = false;
+  app.controller('ProjectFormController', ['$http', function($http){
+    var scope = this;
+    scope.newProject = {name: '', description: ''};
+    scope.errors = {};
 
-    this.addProject = function(customer, form) {
-      if (form.$valid) {
-        customer.projects.push(this.newProject);
-        this.newProject = {};
-        this.errors = false;
-      }
-      else {
-        this.errors = true;
-      }
+    scope.addProject = function(customer) {
+      $http.post(
+        'http://localhost:4000/customers/' + customer.id + '/projects.json',
+        {project: scope.newProject}
+      )
+        .success(function(data){
+          customer.projects.push(data.project);
+          scope.newProject = {name: '', description: ''};
+          scope.errors = {};
+        })
+        .error(function(data){
+          scope.errors = data.errors;
+        });
     };
-  });
+
+    scope.hasError = function(attribute){
+      return scope.errors[attribute.$name] && attribute.$invalid;
+    };
+  }]);
 
   app.directive('customerProjects', function(){
     return {

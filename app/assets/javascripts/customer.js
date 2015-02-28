@@ -1,9 +1,14 @@
 (function(){
   var app = angular.module('mallesti-customer', []);
 
-  app.controller('CustomerController', function(){
-    this.customer = customer;
-  });
+  app.controller('CustomerController', ['$http', function($http){
+    var scope = this;
+    scope.customer = {};
+
+    $http.get('http://localhost:4000/customers.json').success(function(data){
+      scope.customer = data.customers[0];
+    });
+  }]);
 
   app.controller('PanelController', function(){
     this.tab = 1;
