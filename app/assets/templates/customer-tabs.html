@@ -1,8 +1,8 @@
 <ul class="nav nav-pills">
-  <li ng-class="{ active:panelCtrl.isSelected(1) }">
-    <a href ng-click="panelCtrl.selectTab(1)">Información</a>
+  <li ng-class="{ active:panelCtrl.isSelected('info') }">
+    <a href ui-sref="home.info">Información</a>
   </li>
-  <li ng-class="{ active:panelCtrl.isSelected(2) }">
-    <a href ng-click="panelCtrl.selectTab(2)">Proyectos</a>
+  <li ng-class="{ active:panelCtrl.isSelected('projects') }">
+    <a href ui-sref="home.projects">Proyectos</a>
   </li>
 </ul>

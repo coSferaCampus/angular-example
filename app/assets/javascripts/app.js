@@ -17,5 +17,13 @@
         controller: "CustomerController",
         controllerAs: "customerCtrl"
       })
+      .state("home.info", {
+        url: "/info",
+        templateUrl: "customer-extended-information.html"
+      })
+      .state("home.projects", {
+        url: "/projects",
+        templateUrl: "customer-projects.html"
+      });
   });
 })();

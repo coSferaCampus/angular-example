@@ -26,13 +26,6 @@
     };
   }]);
 
-  app.directive('customerProjects', function(){
-    return {
-      restrict: 'E',
-      templateUrl: 'customer-projects.html'
-    };
-  });
-
   app.directive('projectsTable', function(){
     return {
       restrict: 'E',
