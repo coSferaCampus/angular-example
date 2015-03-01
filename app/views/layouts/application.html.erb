@@ -7,15 +7,8 @@
 </head>
 <body>
   <!-- contenedor -->
-  <div class="container">
-    <!-- div con el controlador CustomerController -->
-    <div ng-controller="CustomerController as customerCtrl">
-      <customer-title></customer-title>
+  <div class="container" ui-view></div>
 
-      <!-- section con el controlador PanelController -->
-      <customer-panels></customer-panels>
-    </div>
-  </div>
   <%= javascript_include_tag 'application' %>
 </body>
 </html>
