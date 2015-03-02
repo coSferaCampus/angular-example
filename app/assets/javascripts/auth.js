@@ -52,14 +52,14 @@
           return currentUser.email;
         }
         else {
-          return null;
+          return undefined;
         }
       },
       currentUserToken: function() {
         if (currentUser)
           return currentUser.authentication_token;
         else
-          return null;
+          return undefined;
       }
     };
   }]);

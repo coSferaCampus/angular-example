@@ -2,7 +2,8 @@
   // App module
   var app = angular.module(
     'mallesti',
-    ['ui.router', 'templates', 'mallesti-customer', 'mallesti-project', 'mallesti-auth']
+    ['ui.router', 'permission', 'templates', 'mallesti-customer', 'mallesti-project',
+    'mallesti-auth', 'mallesti-permission']
   );
 
   // Esto pasa el token y el email en cada petición que hagamos a la API
@@ -29,13 +30,25 @@
         url: "/login",
         templateUrl: "login.html",
         controller: "LoginController",
-        controllerAs: "loginCtrl"
+        controllerAs: "loginCtrl",
+        data: {
+          permissions: {
+            only: ['anonymous'],
+            redirectTo: "home.info"
+          }
+        }
       })
       .state("home", {
         url: "/home",
         templateUrl: "home.html",
         controller: "CustomerController",
-        controllerAs: "customerCtrl"
+        controllerAs: "customerCtrl",
+        data: {
+          permissions: {
+            only: ['member'],
+            redirectTo: "login"
+          }
+        }
       })
       .state("home.info", {
         url: "/info",
