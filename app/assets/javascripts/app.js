@@ -7,7 +7,7 @@
 
   app.config(function($urlRouterProvider, $stateProvider){
     // Para las urls que no se encuentren, redirigimos a la raíz.
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/home/info");
 
     // Aquí establecemos los estados de nuestra applicación.
     $stateProvider
