@@ -4,7 +4,6 @@ Feature: Sign Up
   I want to sign up
   In order to use the platform
 
-  @wip
   Scenario: Invalid sign up
     Given I visit sign up page
     When I fill user sign up form with invalid parameters

@@ -31,6 +31,28 @@
     }]
   );
 
+  app.controller(
+    "SignUpController",
+    ['$http', '$state', 'AuthService', function($http, $state, AuthService) {
+      var scope = this;
+      scope.user = {};
+      scope.errors = {};
+
+      scope.register = function() {
+        $http.post("http://localhost:4000/users.json",
+          {user: scope.user}
+        )
+          .success(function(data) {
+            AuthService.saveUser(data.user);
+            $state.go("home.info");
+          })
+          .error(function(data) {
+            scope.errors = data.errors
+          })
+
+      };
+  }]);
+
   // Factories
 
   app.factory("AuthService", ['localStorageService', function(localStorageService) {

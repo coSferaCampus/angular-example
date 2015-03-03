@@ -40,7 +40,15 @@
       })
       .state("sign_up", {
         url: "/sign_up",
-        templateUrl: "sign_up.html"
+        templateUrl: "sign_up.html",
+        controller: "SignUpController",
+        controllerAs: "signUpCtrl",
+        data: {
+          permissions: {
+            only: ['anonymous'],
+            redirectTo: "home.info"
+          }
+        }
       })
       .state("home", {
         url: "/home",

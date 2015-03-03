@@ -28,8 +28,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'rspec-expectations'
+  gem 'cucumber-rails' # Para tests con BDD en las vistas
+  gem 'capybara' # Herramienta para buscar elementos en el DOM durante los tests con cucumber
+  gem 'selenium-webdriver' # Drive para trabajar con javascript en los tests
+  gem 'rspec-expectations' # Expectations de rspec.
 end
