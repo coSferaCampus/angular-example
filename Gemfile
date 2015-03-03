@@ -26,3 +26,10 @@ group :development, :test do
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
 end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec-expectations'
+end

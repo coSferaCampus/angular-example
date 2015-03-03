@@ -38,6 +38,10 @@
           }
         }
       })
+      .state("sign_up", {
+        url: "/sign_up",
+        templateUrl: "sign_up.html"
+      })
       .state("home", {
         url: "/home",
         templateUrl: "home.html",
